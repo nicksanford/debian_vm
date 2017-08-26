@@ -17,6 +17,7 @@ sudo apt-get install -y tree silversearcher-ag ack
 
 # python ruby elixir erlang haskell
 sudo apt-get install -y python3 python3-dev python-virtualenv
+sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
 sudo apt-get install -y make libbz2-dev libsqlite3-dev wget llvm \
                         libncurses5-dev libncursesw5-dev xz-utils tk-dev
 sudo apt-get install -y ruby ruby-dev
@@ -63,3 +64,8 @@ echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
 $HOME/.asdf/bin/asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 $HOME/.asdf/bin/asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+touch ~/.zshenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshenv
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshenv
+echo 'eval "$(pyenv init -)"' >> ~/.zshenv
